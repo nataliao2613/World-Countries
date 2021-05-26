@@ -1,9 +1,16 @@
-@import './config', './header';
+@import './config', './header', './main';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    min-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .light-theme {
@@ -12,4 +19,9 @@
 
 .dark-theme {
     @include theme-setup($dark-theme);
+}
+
+main {
+    margin: 2rem 3rem;
+    height: 100%;
 }

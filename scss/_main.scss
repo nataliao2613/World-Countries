@@ -1,0 +1,18 @@
+.filtration {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    margin-top: 2rem;
+    column-gap: 3rem;
+    row-gap: 2rem;
+    div {
+        height: 250px;
+        background-color: cornflowerblue;
+        border: 2px solid black;
+    }
+}
