@@ -1,1 +1,15 @@
-@import './config';
+@import './config', './header';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.light-theme {
+    @include theme-setup($light-theme);
+}
+
+.dark-theme {
+    @include theme-setup($dark-theme);
+}

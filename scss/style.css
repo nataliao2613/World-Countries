@@ -1,1 +1,21 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.theme-switcher {
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.light-theme {
+  background: #fafafa;
+  color: #111517;
+}
+
+.dark-theme {
+  background: #202c37;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
