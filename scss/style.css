@@ -2,6 +2,40 @@
   cursor: pointer;
 }
 
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+header h3 {
+  font: 800 16px "Nunito Sans", sans-serif;
+}
+
+header span {
+  font: 600 14px "Nunito Sans", sans-serif;
+}
+
+header span i {
+  margin-right: 5px;
+}
+
+.light-theme header {
+  background: white;
+  -webkit-box-shadow: 0 3px 3px 0px #b3b3b3;
+          box-shadow: 0 3px 3px 0px #b3b3b3;
+}
+
+.dark-theme header {
+  background: #2b3945;
+  -webkit-box-shadow: 0 3px 3px 0px #131a20;
+          box-shadow: 0 3px 3px 0px #131a20;
+}
+
 * {
   margin: 0;
   padding: 0;

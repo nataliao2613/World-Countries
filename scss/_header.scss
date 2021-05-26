@@ -1,3 +1,28 @@
 .theme-switcher {
     cursor: pointer;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    h3 {
+        @include set-font(800, 'details');
+    }
+
+    span {
+        @include set-font(600, 'home');
+        i {
+            margin-right: 5px;
+        }
+    }
+    .light-theme & {
+        background: set-element-style($light-theme, 'elements');
+        box-shadow: 0 3px 3px 0px hsl(0, 0%, 70%);
+    }
+
+    .dark-theme & {
+        background: set-element-style($dark-theme, 'elements');
+        box-shadow: 0 3px 3px 0px hsl(207, 26%, 10%);
+    }
+}
