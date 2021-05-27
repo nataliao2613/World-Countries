@@ -98,13 +98,20 @@
 .container {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 0.65fr));
     margin-top: 2rem;
     column-gap: 3rem;
-    row-gap: 2rem;
-    div {
-        height: 250px;
-        background-color: cornflowerblue;
-        border: 2px solid black;
+    row-gap: 4rem;
+    .card {
+        height: 20em;
+        @include single-element-style;
+        img {
+            height: 50%;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            border-top-left-radius: 0.3em;
+            border-top-right-radius: 0.3em;
+        }
     }
 }

@@ -176,18 +176,39 @@ header span i {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  -ms-grid-columns: (minmax(15rem, 0.65fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 0.65fr));
   margin-top: 2rem;
   -webkit-column-gap: 3rem;
           column-gap: 3rem;
-  row-gap: 2rem;
+  row-gap: 4rem;
 }
 
-.container div {
-  height: 250px;
-  background-color: cornflowerblue;
-  border: 2px solid black;
+.container .card {
+  height: 20em;
+  border-radius: 0.3em;
+}
+
+.light-theme .container .card {
+  background: white;
+  -webkit-box-shadow: 0 0 3px #b3b3b3;
+          box-shadow: 0 0 3px #b3b3b3;
+}
+
+.dark-theme .container .card {
+  background: #2b3945;
+  -webkit-box-shadow: 0 0 3px #131a20;
+          box-shadow: 0 0 3px #131a20;
+}
+
+.container .card img {
+  height: 50%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
 }
 
 * {

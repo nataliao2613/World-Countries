@@ -6,15 +6,37 @@ let countriesList = document.querySelector('.container')
 let show = false
 
 let countries = []
-
 axios.get('https://restcountries.eu/rest/v2/all')
-.then((response) => {
-    response.data.forEach(c => {
-        countries.push(c)
+    .then((response) => {
+        console.log(response.data)
+        response.data.forEach(c => {
+        let box = document.createElement('div')
+        box.classList.add('card')
+        let flag = document.createElement('img')
+        flag.src = c.flag
+        let details = document.createElement('div')
+        details.classList.add('card__details')
+        let name = document.createElement('p')
+        name.classList.add('country-name')
+        name.textContent = `${c.name}`
+        let population = document.createElement('p')
+        population.classList.add('country-population')
+        population.textContent = `Population: ${c.population}` 
+        let region = document.createElement('p')
+        region.classList.add('country-region')
+        region.textContent = `Region: ${c.region}` 
+        let capital = document.createElement('p')
+        capital.classList.add('country-capital')
+        capital.textContent = `Capital: ${c.capital}` 
+        details.appendChild(name)
+        details.appendChild(population)
+        details.appendChild(region)
+        details.appendChild(capital)
+        box.appendChild(flag)
+        box.appendChild(details)
+        countriesList.appendChild(box)
     });
 })
-
-console.log(countries)
 
 const switchTheme = () => {
     document.body.classList.toggle('dark-theme')
