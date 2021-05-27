@@ -10,6 +10,8 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1rem 1.5rem;
+  border-radius: 0;
+  border-radius: 0.3em;
 }
 
 header h3 {
@@ -26,14 +28,14 @@ header span i {
 
 .light-theme header {
   background: white;
-  -webkit-box-shadow: 0 3px 3px 0px #b3b3b3;
-          box-shadow: 0 3px 3px 0px #b3b3b3;
+  -webkit-box-shadow: 0 0 3px #b3b3b3;
+          box-shadow: 0 0 3px #b3b3b3;
 }
 
 .dark-theme header {
   background: #2b3945;
-  -webkit-box-shadow: 0 3px 3px 0px #131a20;
-          box-shadow: 0 3px 3px 0px #131a20;
+  -webkit-box-shadow: 0 0 3px #131a20;
+          box-shadow: 0 0 3px #131a20;
 }
 
 .filtration {
@@ -43,6 +45,106 @@ header span i {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 3em;
+}
+
+.filtration__search-bar {
+  position: relative;
+  height: 3em;
+  border-radius: 0.3em;
+}
+
+.light-theme .filtration__search-bar {
+  background: white;
+}
+
+.dark-theme .filtration__search-bar {
+  background: #2b3945;
+}
+
+.filtration__search-bar input {
+  width: 25em;
+  padding: 1.5em;
+  padding-left: 3em;
+}
+
+.filtration__search-bar i {
+  position: absolute;
+  left: 1em;
+  top: 0.9em;
+}
+
+.light-theme .filtration__search-bar i {
+  color: #858585;
+}
+
+.dark-theme .filtration__search-bar i {
+  color: white;
+}
+
+.filtration input,
+.filtration select {
+  border: none;
+  background: transparent;
+  outline: none;
+  border-radius: 0.3em;
+  height: 3.5em;
+}
+
+.light-theme .filtration input, .light-theme
+.filtration select {
+  background: white;
+  -webkit-box-shadow: 0 0 3px #b3b3b3;
+          box-shadow: 0 0 3px #b3b3b3;
+}
+
+.dark-theme .filtration input, .dark-theme
+.filtration select {
+  background: #2b3945;
+  -webkit-box-shadow: 0 0 3px #131a20;
+          box-shadow: 0 0 3px #131a20;
+}
+
+.filtration__select-box {
+  position: relative;
+}
+
+.filtration__select-box i {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+
+.filtration__select-box select {
+  width: 15em;
+  padding: 1em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.light-theme .filtration__select-box select {
+  color: #111517;
+}
+
+.dark-theme .filtration__select-box select {
+  color: white;
+}
+
+.filtration__select-box select option {
+  border-radius: 0.3em;
+}
+
+.light-theme .filtration__select-box select option {
+  background: white;
+  -webkit-box-shadow: 0 0 3px #b3b3b3;
+          box-shadow: 0 0 3px #b3b3b3;
+}
+
+.dark-theme .filtration__select-box select option {
+  background: #2b3945;
+  -webkit-box-shadow: 0 0 3px #131a20;
+          box-shadow: 0 0 3px #131a20;
 }
 
 .container {
