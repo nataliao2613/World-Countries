@@ -211,6 +211,20 @@ header span i {
   border-top-right-radius: 0.3em;
 }
 
+.container .card__details {
+  font: 600 14px "Nunito Sans", sans-serif;
+  padding: 1rem 2rem;
+}
+
+.container .card__details h4 {
+  font: 800 16px "Nunito Sans", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.container .card__details span {
+  font-weight: 300;
+}
+
 * {
   margin: 0;
   padding: 0;

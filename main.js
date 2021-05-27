@@ -16,18 +16,19 @@ axios.get('https://restcountries.eu/rest/v2/all')
         flag.src = c.flag
         let details = document.createElement('div')
         details.classList.add('card__details')
-        let name = document.createElement('p')
+        let name = document.createElement('h4')
         name.classList.add('country-name')
         name.textContent = `${c.name}`
         let population = document.createElement('p')
         population.classList.add('country-population')
-        population.textContent = `Population: ${c.population}` 
+        population.innerHTML = `Population: <span> ${c.population} </span>`
+        // population.textContent = `Population: ${c.population}` 
         let region = document.createElement('p')
         region.classList.add('country-region')
-        region.textContent = `Region: ${c.region}` 
+        region.innerHTML = `Region: <span> ${c.region}</span>` 
         let capital = document.createElement('p')
         capital.classList.add('country-capital')
-        capital.textContent = `Capital: ${c.capital}` 
+        capital.innerHTML = `Capital: <span>${c.capital}</span>` 
         details.appendChild(name)
         details.appendChild(population)
         details.appendChild(region)
