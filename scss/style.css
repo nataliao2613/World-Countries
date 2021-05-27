@@ -83,7 +83,7 @@ header span i {
 }
 
 .filtration input,
-.filtration select {
+.filtration .select {
   border: none;
   background: transparent;
   outline: none;
@@ -92,14 +92,14 @@ header span i {
 }
 
 .light-theme .filtration input, .light-theme
-.filtration select {
+.filtration .select {
   background: white;
   -webkit-box-shadow: 0 0 3px #b3b3b3;
           box-shadow: 0 0 3px #b3b3b3;
 }
 
 .dark-theme .filtration input, .dark-theme
-.filtration select {
+.filtration .select {
   background: #2b3945;
   -webkit-box-shadow: 0 0 3px #131a20;
           box-shadow: 0 0 3px #131a20;
@@ -113,38 +113,63 @@ header span i {
   position: absolute;
   right: 1em;
   top: 1em;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.filtration__select-box select {
+.filtration__select-box i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.filtration__select-box .select {
   width: 15em;
   padding: 1em;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  font: 600 14px "Nunito Sans", sans-serif;
 }
 
-.light-theme .filtration__select-box select {
+.light-theme .filtration__select-box .select {
   color: #111517;
 }
 
-.dark-theme .filtration__select-box select {
+.dark-theme .filtration__select-box .select {
   color: white;
 }
 
-.filtration__select-box select option {
+.filtration__select-box .options {
+  display: none;
+  margin-top: 0.5em;
   border-radius: 0.3em;
 }
 
-.light-theme .filtration__select-box select option {
+.light-theme .filtration__select-box .options {
   background: white;
   -webkit-box-shadow: 0 0 3px #b3b3b3;
           box-shadow: 0 0 3px #b3b3b3;
 }
 
-.dark-theme .filtration__select-box select option {
+.dark-theme .filtration__select-box .options {
   background: #2b3945;
   -webkit-box-shadow: 0 0 3px #131a20;
           box-shadow: 0 0 3px #131a20;
+}
+
+.filtration__select-box .options li {
+  font: 600 14px "Nunito Sans", sans-serif;
+  padding: 1em;
+  list-style: none;
+  cursor: pointer;
+}
+
+.light-theme .filtration__select-box .options li:hover {
+  background: #858585;
+}
+
+.dark-theme .filtration__select-box .options li:hover {
+  background: #202c37;
 }
 
 .container {
