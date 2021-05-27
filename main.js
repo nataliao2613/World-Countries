@@ -2,7 +2,19 @@ let themeSwitcher = document.querySelector('.theme-switcher')
 let filtrationArrow = document.querySelector('.arrow')
 let optionsList = document.querySelector('.options')
 let filterBox = document.querySelector('.select')
+let countriesList = document.querySelector('.container')
 let show = false
+
+let countries = []
+
+axios.get('https://restcountries.eu/rest/v2/all')
+.then((response) => {
+    response.data.forEach(c => {
+        countries.push(c)
+    });
+})
+
+console.log(countries)
 
 const switchTheme = () => {
     document.body.classList.toggle('dark-theme')
