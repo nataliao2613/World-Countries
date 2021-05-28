@@ -68,6 +68,14 @@ header span i {
   padding-left: 3em;
 }
 
+.light-theme .filtration__search-bar input {
+  color: #111517;
+}
+
+.dark-theme .filtration__search-bar input {
+  color: white;
+}
+
 .filtration__search-bar i {
   position: absolute;
   left: 1em;
