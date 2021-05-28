@@ -3,8 +3,9 @@ let filtrationArrow = document.querySelector('.arrow')
 let optionsList = document.querySelector('.options')
 let filterBox = document.querySelector('.select')
 let countriesList = document.querySelector('.container')
+let searchBox = document.querySelector('.filtration__search-bar input')
+let cards = document.querySelectorAll('.container div')
 let show = false
-
 let countries = []
 
 class Country{
@@ -33,34 +34,18 @@ axios.get('https://restcountries.eu/rest/v2/all')
             countries.push(country)
         let box = document.createElement('div')
         box.classList.add('card')
-        let flag = document.createElement('img')
-        flag.src = c.flag
-        let details = document.createElement('div')
-        details.classList.add('card__details')
-        let name = document.createElement('h4')
-        name.classList.add('country-name')
-        name.textContent = `${c.name}`
-        let population = document.createElement('p')
-        population.classList.add('country-population')
-        population.innerHTML = `Population: <span> ${c.population} </span>`
-        let region = document.createElement('p')
-        region.classList.add('country-region')
-        region.innerHTML = `Region: <span> ${c.region}</span>` 
-        let capital = document.createElement('p')
-        capital.classList.add('country-capital')
-        capital.innerHTML = `Capital: <span>${c.capital}</span>` 
-        details.appendChild(name)
-        details.appendChild(population)
-        details.appendChild(region)
-        details.appendChild(capital)
-        box.appendChild(flag)
-        box.appendChild(details)
+        box.innerHTML = `
+        <img src="${c.flag}" alt="flag_icon"/>
+        <div class="card__details">
+        <h4>${c.name}</h4>
+        <p class="country-population">Population: <span> ${c.population} </span></p>
+        <p class="country-region">Region: <span> ${c.region} </span></p>
+        <p class="country-capital">Capital: <span> ${c.capital} </span></p>
+        </div>`
         countriesList.appendChild(box)
     })  
 })
 .then(() => console.log(countries));
-
-
 
 
 const switchTheme = () => {
@@ -82,11 +67,38 @@ const showOptions = () => {
     } 
 }
 
+cards.forEach((c) => {
+    c.addEventListener('click', () => console.log(c))
+})
+
+const search = (e) => {
+    let searchValue = e.target.value.toLowerCase()
+    console.log(searchValue)
+
+    countriesList.textContent = ''
+    countries.filter((c) => {
+        if(c.name.toLowerCase().includes(searchValue)){
+            console.log(c.name)
+            let box = document.createElement('div')
+            box.classList.add('card')
+            box.innerHTML = `
+            <img src="${c.flag}" alt="flag_icon"/>
+            <div class="card__details">
+            <h4>${c.name}</h4>
+            <p class="country-population">Population: <span> ${c.population} </span></p>
+            <p class="country-region">Region: <span> ${c.region} </span></p>
+            <p class="country-capital">Capital: <span> ${c.capital} </span></p>
+            </div>`
+            countriesList.appendChild(box)
+        }
+    })
+}
+
 optionsList.onmouseleave = () => {
     optionsList.style.display = 'none'
         show = !show
 }
 
-
 themeSwitcher.addEventListener('click', switchTheme)
 filtrationArrow.addEventListener('click', showOptions)
+searchBox.addEventListener('input', search)
