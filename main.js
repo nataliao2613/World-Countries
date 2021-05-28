@@ -6,10 +6,31 @@ let countriesList = document.querySelector('.container')
 let show = false
 
 let countries = []
+
+class Country{
+    constructor(name, flag, population, region, capital, nativeName, 
+        subregion, topLevelDomain, currencies, languages, borders){
+            this.name = name
+            this.flag = flag
+            this.population = population
+            this.region = region
+            this.capital = capital
+            this.nativeName = nativeName
+            this.subregion = subregion
+            this.topLevelDomain = topLevelDomain
+            this.currencies = currencies
+            this.languages = languages
+            this.borders = borders
+    }
+}
+
+
 axios.get('https://restcountries.eu/rest/v2/all')
     .then((response) => {
-        console.log(response.data)
         response.data.forEach(c => {
+        let country = new Country(c.name, c.flag, c.population, c.region, c.capital, c.nativeName, 
+            c.subregion, c.topLevelDomain, c.currencies, c.languages, c.borders)
+            countries.push(country)
         let box = document.createElement('div')
         box.classList.add('card')
         let flag = document.createElement('img')
@@ -22,7 +43,6 @@ axios.get('https://restcountries.eu/rest/v2/all')
         let population = document.createElement('p')
         population.classList.add('country-population')
         population.innerHTML = `Population: <span> ${c.population} </span>`
-        // population.textContent = `Population: ${c.population}` 
         let region = document.createElement('p')
         region.classList.add('country-region')
         region.innerHTML = `Region: <span> ${c.region}</span>` 
@@ -36,8 +56,12 @@ axios.get('https://restcountries.eu/rest/v2/all')
         box.appendChild(flag)
         box.appendChild(details)
         countriesList.appendChild(box)
-    });
+    })  
 })
+.then(() => console.log(countries));
+
+
+
 
 const switchTheme = () => {
     document.body.classList.toggle('dark-theme')
