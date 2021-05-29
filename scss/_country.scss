@@ -30,6 +30,10 @@
 
 .section {
     display: flex;
+    img {
+        width: 10em;
+        height: 5em;
+    }
 }
 
 .details {

@@ -297,6 +297,11 @@ header span i {
   display: flex;
 }
 
+.section img {
+  width: 10em;
+  height: 5em;
+}
+
 .details__section {
   display: -webkit-box;
   display: -ms-flexbox;
