@@ -9,6 +9,7 @@ let searchBox = document.querySelector('.filtration__search-bar input')
 
 let show = false
 let countries = []
+let cards = []
 
 axios.get('https://restcountries.eu/rest/v2/all')
     .then((response) => {
@@ -23,11 +24,12 @@ axios.get('https://restcountries.eu/rest/v2/all')
         })  
     })
     .then(() => {
-        let cards = document.querySelectorAll('.card')
+        cards = document.querySelectorAll('.card')
         cards.forEach((c, id) => {
             c.addEventListener('click', () => {
                 location.href = `/country-page.html`
                 localStorage.setItem('countryCode', countries[id].code)
+                
             })
         })
     });
@@ -49,12 +51,10 @@ const search = (e) => {
     filterBox.textContent = 'Filter by Region'
 
     countriesList.textContent = ''
-    countries.filter((c) => {
+    countries.filter((c, id) => {
         if(c.name.toLowerCase().includes(searchValue)){
-            let box = document.createElement('div')
-            box.classList.add('card')
-            box.innerHTML = createCountryCard(c)
-            countriesList.appendChild(box)
+            let selected = cards[id]
+            countriesList.appendChild(selected)
         }
     })
 }
@@ -70,12 +70,10 @@ filterBy.forEach(option => {
         filterBox.textContent = region
         optionsList.style.display = 'none'
         countriesList.textContent = ''
-        countries.filter((c) => {
+        countries.filter((c, id) => {
             if(c.region.toLowerCase().includes(region.toLowerCase())){
-                let box = document.createElement('div')
-                box.classList.add('card')
-                box.innerHTML = createCountryCard(c)
-                countriesList.appendChild(box)
+                let selected = cards[id]
+                countriesList.appendChild(selected)
             }
         })
     })
