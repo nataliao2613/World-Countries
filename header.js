@@ -13,5 +13,6 @@ export const clickOnHeader = () => {
     let header = document.querySelector('header h3')
     header.addEventListener('click', () => {
         location.href = 'index.html'
+        localStorage.clear()
     })
 }

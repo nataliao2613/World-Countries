@@ -1,4 +1,4 @@
-import Country, {createCountryCard, loadContent} from './country.js'
+import Country, {createCountryCard} from './country.js'
 
 let filtrationArrow = document.querySelector('.arrow')
 let optionsList = document.querySelector('.options')
@@ -6,8 +6,32 @@ let filterBy = document.querySelectorAll('.options li')
 let filterBox = document.querySelector('.select')
 let countriesList = document.querySelector('.container')
 let searchBox = document.querySelector('.filtration__search-bar input')
+
 let show = false
-let countries = loadContent()
+let countries = []
+
+axios.get('https://restcountries.eu/rest/v2/all')
+    .then((response) => {
+        response.data.forEach(c => {
+            let country = new Country(c.name, c.flag, c.population, c.region, c.capital, c.nativeName, 
+                c.subregion, c.topLevelDomain, c.currencies, c.languages, c.borders, c.alpha2Code)
+                countries.push(country)
+            let box = document.createElement('div')
+            box.classList.add('card')
+            box.innerHTML = createCountryCard(c)
+            countriesList.appendChild(box)
+        })  
+    })
+    .then(() => {
+        let cards = document.querySelectorAll('.card')
+        cards.forEach((c, id) => {
+            c.addEventListener('click', () => {
+                location.href = `/country-page.html`
+                localStorage.setItem('countryCode', countries[id].code)
+            })
+        })
+    });
+
 
 const showOptions = () => {
     if(!show){
