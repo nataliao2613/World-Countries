@@ -16,6 +16,7 @@ header {
 
 header h3 {
   font: 800 16px "Nunito Sans", sans-serif;
+  cursor: pointer;
 }
 
 header span {
@@ -195,6 +196,7 @@ header span i {
 
 .container .card {
   height: 20em;
+  cursor: pointer;
   border-radius: 0.3em;
 }
 

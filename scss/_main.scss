@@ -110,6 +110,7 @@
     row-gap: 4rem;
     .card {
         height: 20em;
+        cursor: pointer;
         @include single-element-style;
         a {
             text-decoration: none;
