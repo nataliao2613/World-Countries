@@ -1,3 +1,5 @@
+import Country, {createCountryCard} from './country.js'
+
 let themeSwitcher = document.querySelector('.theme-switcher')
 let filtrationArrow = document.querySelector('.arrow')
 let optionsList = document.querySelector('.options')
@@ -8,38 +10,6 @@ let searchBox = document.querySelector('.filtration__search-bar input')
 let cards = document.querySelectorAll('.container div')
 let show = false
 let countries = []
-let options = [...filterBy]
-
-// console.log(options[0].id)
-
-class Country{
-    constructor(name, flag, population, region, capital, nativeName, 
-        subregion, topLevelDomain, currencies, languages, borders){
-            this.name = name
-            this.flag = flag
-            this.population = population
-            this.region = region
-            this.capital = capital
-            this.nativeName = nativeName
-            this.subregion = subregion
-            this.topLevelDomain = topLevelDomain
-            this.currencies = currencies
-            this.languages = languages
-            this.borders = borders
-    }
-}
-
-const createCountryCard = (country) => {
-    return (`
-    <img src="${country.flag}" alt="flag_icon"/>
-    <div class="card__details">
-    <h4>${country.name}</h4>
-    <p class="country-population">Population: <span> ${country.population} </span></p>
-    <p class="country-region">Region: <span> ${country.region} </span></p>
-    <p class="country-capital">Capital: <span> ${country.capital} </span></p>
-    </div>`)
-}
-
 
 axios.get('https://restcountries.eu/rest/v2/all')
     .then((response) => {
@@ -119,4 +89,5 @@ filterBy.forEach(option => {
 
 themeSwitcher.addEventListener('click', switchTheme)
 filtrationArrow.addEventListener('click', showOptions)
+filterBox.addEventListener('click', showOptions)
 searchBox.addEventListener('input', search)

@@ -65,6 +65,7 @@
             width: 15em;
             padding: $select-padding;
             appearance: none;
+            cursor: pointer;
             @include set-font(600, 'home');
 
             .light-theme & {
@@ -75,29 +76,26 @@
                 color: set-element-style($dark-theme, 'text');
             }
         }
+    }
+}
 
-        .options {
-            display: none;
-            margin-top: 0.5em;
-            @include single-element-style;
-            li {
-                @include set-font(600, 'home');
-                padding: 1em;
-                list-style: none;
-                cursor: pointer;
+.options {
+    display: none;
+    margin-top: 0.5em;
+    @include single-element-style;
+    li {
+        @include set-font(600, 'home');
+        padding: 1em;
+        list-style: none;
+        cursor: pointer;
 
-                &:hover {
-                    .light-theme & {
-                        background: set-element-style($light-theme, 'input');
-                    }
+        &:hover {
+            .light-theme & {
+                background: set-element-style($light-theme, 'input');
+            }
 
-                    .dark-theme & {
-                        background: set-element-style(
-                            $dark-theme,
-                            'background'
-                        );
-                    }
-                }
+            .dark-theme & {
+                background: set-element-style($dark-theme, 'background');
             }
         }
     }
@@ -113,6 +111,16 @@
     .card {
         height: 20em;
         @include single-element-style;
+        a {
+            text-decoration: none;
+            .light-theme & {
+                color: set-element-style($light-theme, 'text');
+            }
+
+            .dark-theme & {
+                color: set-element-style($dark-theme, 'text');
+            }
+        }
         img {
             height: 50%;
             width: 100%;

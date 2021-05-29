@@ -136,6 +136,7 @@ header span i {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  cursor: pointer;
   font: 600 14px "Nunito Sans", sans-serif;
 }
 
@@ -147,36 +148,36 @@ header span i {
   color: white;
 }
 
-.filtration__select-box .options {
+.options {
   display: none;
   margin-top: 0.5em;
   border-radius: 0.3em;
 }
 
-.light-theme .filtration__select-box .options {
+.light-theme .options {
   background: white;
   -webkit-box-shadow: 0 0 3px #b3b3b3;
           box-shadow: 0 0 3px #b3b3b3;
 }
 
-.dark-theme .filtration__select-box .options {
+.dark-theme .options {
   background: #2b3945;
   -webkit-box-shadow: 0 0 3px #131a20;
           box-shadow: 0 0 3px #131a20;
 }
 
-.filtration__select-box .options li {
+.options li {
   font: 600 14px "Nunito Sans", sans-serif;
   padding: 1em;
   list-style: none;
   cursor: pointer;
 }
 
-.light-theme .filtration__select-box .options li:hover {
+.light-theme .options li:hover {
   background: #858585;
 }
 
-.dark-theme .filtration__select-box .options li:hover {
+.dark-theme .options li:hover {
   background: #202c37;
 }
 
@@ -207,6 +208,18 @@ header span i {
   background: #2b3945;
   -webkit-box-shadow: 0 0 3px #131a20;
           box-shadow: 0 0 3px #131a20;
+}
+
+.container .card a {
+  text-decoration: none;
+}
+
+.light-theme .container .card a {
+  color: #111517;
+}
+
+.dark-theme .container .card a {
+  color: white;
 }
 
 .container .card img {
