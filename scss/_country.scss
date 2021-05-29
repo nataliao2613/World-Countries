@@ -27,3 +27,13 @@
         }
     }
 }
+
+.section {
+    display: flex;
+}
+
+.details {
+    &__section {
+        display: flex;
+    }
+}
