@@ -51,6 +51,32 @@ $dark-theme: (
     }
 }
 
+@mixin button-style($height) {
+    @include single-element-style;
+    @include set-font(300, 'home');
+    height: $height;
+    border: none;
+    cursor: pointer;
+
+    .light-theme & {
+        color: set-element-style($light-theme, 'text');
+    }
+
+    .dark-theme & {
+        color: set-element-style($dark-theme, 'text');
+    }
+
+    &:hover {
+        .light-theme & {
+            box-shadow: 0 0 1em hsl(0, 0%, 70%);
+        }
+
+        .dark-theme & {
+            box-shadow: 0 0 1em hsl(207, 26%, 10%);
+        }
+    }
+}
+
 @mixin smaller_screen() {
     @media screen and (max-width: 640px) {
         @content;
