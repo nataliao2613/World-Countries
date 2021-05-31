@@ -40,4 +40,11 @@
     &__section {
         display: flex;
     }
+
+    &__borders {
+        span {
+            @include single-element-style;
+            cursor: pointer;
+        }
+    }
 }

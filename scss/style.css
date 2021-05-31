@@ -308,6 +308,23 @@ header span i {
   display: flex;
 }
 
+.details__borders span {
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.light-theme .details__borders span {
+  background: white;
+  -webkit-box-shadow: 0 0 3px #b3b3b3;
+          box-shadow: 0 0 3px #b3b3b3;
+}
+
+.dark-theme .details__borders span {
+  background: #2b3945;
+  -webkit-box-shadow: 0 0 3px #131a20;
+          box-shadow: 0 0 3px #131a20;
+}
+
 * {
   margin: 0;
   padding: 0;
