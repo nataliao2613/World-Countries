@@ -23,12 +23,14 @@ export default class Country{
 
 export const createCountryCard = (country) => {
     return (`
+    <a href="country-page.html">
     <img src="${country.flag}" alt="flag_icon"/>
     <div class="card__details">
     <h4>${country.name}</h4>
     <p class="country-population">Population: <span> ${country.population} </span></p>
     <p class="country-region">Region: <span> ${country.region} </span></p>
     <p class="country-capital">Capital: <span> ${country.capital} </span></p>
-    </div>`
+    </div>
+    </a>`
     )
 }

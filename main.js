@@ -27,7 +27,7 @@ axios.get('https://restcountries.eu/rest/v2/all')
         cards = document.querySelectorAll('.card')
         cards.forEach((c, id) => {
             c.addEventListener('click', () => {
-                location.href = `/country-page.html`
+                // location.href = `/country-page.html`
                 localStorage.setItem('countryCode', countries[id].code)
                 
             })
