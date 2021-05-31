@@ -374,7 +374,6 @@ header span i {
 
 .details__borders button {
   border-radius: 0.3em;
-  font: 300 14px "Nunito Sans", sans-serif;
   cursor: pointer;
   height: 2em;
   margin: 0.4em;
@@ -396,7 +395,12 @@ header span i {
 }
 
 .details__borders button a {
+  font: 300 14px "Nunito Sans", sans-serif;
   text-decoration: none;
+}
+
+.details__borders button a:visited, .details__borders button a:active, .details__borders button a:link {
+  font: 300 14px "Nunito Sans", sans-serif;
 }
 
 .light-theme .details__borders button {

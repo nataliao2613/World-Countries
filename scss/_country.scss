@@ -80,7 +80,6 @@
     &__borders {
         button {
             @include single-element-style;
-            @include set-font(300, 'home');
             cursor: pointer;
             height: 2em;
             margin: 0.4em;
@@ -89,7 +88,14 @@
             background: transparent;
 
             a {
+                @include set-font(300, 'home');
                 text-decoration: none;
+
+                &:visited,
+                &:active,
+                &:link {
+                    @include set-font(300, 'home');
+                }
             }
 
             .light-theme & {

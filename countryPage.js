@@ -48,10 +48,10 @@ axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
             let borderBox = document.createElement('button')
             let countryName = document.createElement('a')
             countryName.textContent = borderCountry.name
+            countryName.href = `country-page.html`
             
             countryName.addEventListener('click', () => {
-                localStorage.setItem('countryCode', c)
-                countryName.href = `/country-page.html`
+                localStorage.setItem('countryCode', c)    
             })
             borderBox.appendChild(countryName)
             borders.appendChild(borderBox)
