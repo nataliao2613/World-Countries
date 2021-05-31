@@ -41,23 +41,26 @@ axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
         id === 0 ? 
         languages.textContent += `${c.name}` : languages.textContent += `, ${c.name}`
     })
-    country.borders.map((c) => {
-        axios.get(`https://restcountries.eu/rest/v2/alpha/${c}`)
-        .then((response) => {
-            let borderCountry = response.data
-            let borderBox = document.createElement('button')
-            let countryName = document.createElement('a')
-            countryName.textContent = borderCountry.name
-            countryName.href = `country-page.html`
-            
-            countryName.addEventListener('click', () => {
-                localStorage.setItem('countryCode', c)    
-            })
-            borderBox.appendChild(countryName)
-            borders.appendChild(borderBox)
-        })
 
-    })
+    if(country.borders.length !== 0){
+        borders.textContent = 'Border Countries:'
+        country.borders.map((c) => {
+            axios.get(`https://restcountries.eu/rest/v2/alpha/${c}`)
+            .then((response) => {
+                let borderCountry = response.data
+                let borderBox = document.createElement('button')
+                let countryName = document.createElement('a')
+                countryName.textContent = borderCountry.name
+                countryName.href = `country-page.html`
+                
+                countryName.addEventListener('click', () => {
+                    localStorage.setItem('countryCode', c)    
+                })
+                borderBox.appendChild(countryName)
+                borders.appendChild(borderBox)
+            })
+        })
+    }
 })
 
 backButton.addEventListener('click', () => {

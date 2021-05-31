@@ -31,29 +31,27 @@
 .section {
     display: flex;
     width: 100%;
-    // min-height: 60vh;
-    gap: 10%;
+    gap: 5em;
     margin-top: 3rem;
 
     img {
-        width: 40%;
-        height: 40%;
+        width: 30em;
+        height: 20em;
+        object-fit: cover;
         @include single-element-style;
         border-radius: 0;
     }
 }
 
 .details {
-    flex-basis: 50%;
+    // flex-basis: 50%;
+    width: 40em;
     @include set-font(600, 'home');
     margin: 2em;
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     flex-shrink: 1;
-
-    h1 {
-    }
 
     span {
         font-weight: 300;
@@ -62,15 +60,15 @@
     &__section {
         display: flex;
         margin: 2em 0;
-        flex-shrink: 1;
+        flex-shrink: 3;
 
         &--row1 {
-            flex-basis: 50%;
+            // flex-basis: 50%;
             flex-grow: 1;
         }
 
         &--row2 {
-            flex-basis: 50%;
+            // flex-basis: 50%;
             flex-shrink: 1;
             display: flex;
             flex-direction: column;

@@ -296,13 +296,15 @@ header span i {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  gap: 10%;
+  gap: 5em;
   margin-top: 3rem;
 }
 
 .section img {
-  width: 40%;
-  height: 40%;
+  width: 30em;
+  height: 20em;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0.3em;
   border-radius: 0;
 }
@@ -320,8 +322,7 @@ header span i {
 }
 
 .details {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  width: 40em;
   font: 600 14px "Nunito Sans", sans-serif;
   margin: 2em;
   -ms-flex-wrap: wrap;
@@ -346,21 +347,17 @@ header span i {
   display: -ms-flexbox;
   display: flex;
   margin: 2em 0;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  -ms-flex-negative: 3;
+      flex-shrink: 3;
 }
 
 .details__section--row1 {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
 .details__section--row2 {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
   -ms-flex-negative: 1;
       flex-shrink: 1;
   display: -webkit-box;
