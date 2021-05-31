@@ -53,6 +53,19 @@ header span i {
   position: relative;
   height: 3em;
   border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+
+.light-theme .filtration__search-bar {
+  background: white;
+  -webkit-box-shadow: 0 0 3px #b3b3b3;
+          box-shadow: 0 0 3px #b3b3b3;
+}
+
+.dark-theme .filtration__search-bar {
+  background: #2b3945;
+  -webkit-box-shadow: 0 0 3px #131a20;
+          box-shadow: 0 0 3px #131a20;
 }
 
 .filtration__search-bar input {
