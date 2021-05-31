@@ -61,6 +61,6 @@ axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
 })
 
 backButton.addEventListener('click', () => {
-    location.href = '/index.html'
+    location.href = 'index.html'
     localStorage.clear()
 })
