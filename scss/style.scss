@@ -36,3 +36,16 @@ a {
         color: set-element-style($dark-theme, 'text');
     }
 }
+
+h1 {
+    .light-theme & {
+        color: set-element-style($light-theme, 'text');
+    }
+
+    .dark-theme & {
+        color: set-element-style($dark-theme, 'text');
+    }
+
+    font: 800 3em $main-font;
+    text-align: center;
+}

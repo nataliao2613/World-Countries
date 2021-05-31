@@ -11,6 +11,12 @@ let show = false
 let countries = []
 let cards = []
 
+countriesList.style.display = 'none'
+let loadingHeader = document.createElement('h1')
+loadingHeader.style.display = 'block'
+loadingHeader.textContent = 'Loading .... '
+document.querySelector('main').appendChild(loadingHeader)
+
 axios.get('https://restcountries.eu/rest/v2/all')
     .then((response) => {
         response.data.forEach(c => {
@@ -31,7 +37,16 @@ axios.get('https://restcountries.eu/rest/v2/all')
                 searchBox.textContent = ''
             })
         })
-    });
+    })
+    .then(() => {
+        loadingHeader.style.display = 'none'
+        countriesList.style.display = 'grid'
+    })
+    .catch(err => {
+        loadingHeader.textContent = 'Ups... Something went wrong!'
+        console.log(err);
+    })
+    
 
 
 const showOptions = () => {

@@ -5,7 +5,7 @@ clickOnHeader()
 
 let backButton = document.querySelector('.back-button')
 let flag = document.querySelector('.section img')
-let name = document.querySelector('.details h1')
+let name = document.querySelector('.details h2')
 let nativeName = document.querySelector('.native-name')
 let population = document.querySelector('.population')
 let region = document.querySelector('.region')
@@ -15,9 +15,16 @@ let domain = document.querySelector('.domain')
 let currencies = document.querySelector('.currencies')
 let languages = document.querySelector('.languages')
 let borders = document.querySelector('.details__borders')
+let countrySection = document.querySelector('.section')
 
 let countryCode = localStorage.getItem('countryCode')
 let country
+
+countrySection.style.display = 'none'
+let loadingHeader = document.createElement('h1')
+loadingHeader.style.display = 'block'
+loadingHeader.textContent = 'Loading .... '
+document.querySelector('main').appendChild(loadingHeader)
 
 axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
 .then((response) => {
@@ -59,9 +66,24 @@ axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
                 borderBox.appendChild(countryName)
                 borders.appendChild(borderBox)
             })
+            .catch(err => {
+                loadingHeader.textContent = 'Ups... Something went wrong!'
+                countrySection.style.display = 'none'
+                loadingHeader.style.display = 'block'
+                console.log(err);
+            })
         })
     }
 })
+.then(() => {
+    loadingHeader.style.display = 'none'
+    countrySection.style.display = 'flex'
+})
+.catch(err => {
+    loadingHeader.textContent = 'Ups... Something went wrong!'
+    console.log(err);
+})
+
 
 backButton.addEventListener('click', () => {
     location.href = 'index.html'

@@ -331,6 +331,10 @@ header span i {
   line-height: 1.5rem;
 }
 
+.details h2 {
+  font-size: 2rem;
+}
+
 .details span {
   font-weight: 300;
 }
@@ -486,6 +490,19 @@ a {
 }
 
 .dark-theme a {
+  color: white;
+}
+
+h1 {
+  font: 800 3em "Nunito Sans", sans-serif;
+  text-align: center;
+}
+
+.light-theme h1 {
+  color: #111517;
+}
+
+.dark-theme h1 {
   color: white;
 }
 /*# sourceMappingURL=style.css.map */
