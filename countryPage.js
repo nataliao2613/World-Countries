@@ -76,8 +76,11 @@ axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
     }
 })
 .then(() => {
-    loadingHeader.style.display = 'none'
-    countrySection.style.display = 'flex'
+    setTimeout(() => {
+        loadingHeader.style.display = 'none'
+        countrySection.style.display = 'flex'
+    }, 500)
+
 })
 .catch(err => {
     loadingHeader.textContent = 'Ups... Something went wrong!'
