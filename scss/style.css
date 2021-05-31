@@ -55,14 +55,6 @@ header span i {
   border-radius: 0.3em;
 }
 
-.light-theme .filtration__search-bar {
-  background: white;
-}
-
-.dark-theme .filtration__search-bar {
-  background: #2b3945;
-}
-
 .filtration__search-bar input {
   width: 25em;
   padding: 1.5em;
@@ -444,6 +436,20 @@ header span i {
     width: 100%;
   }
   .details {
+    width: 100%;
+  }
+  .filtration {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 6rem;
+    gap: 1rem;
+  }
+  .filtration__search-bar input {
+    width: 100%;
+  }
+  .filtration .select {
     width: 100%;
   }
 }
