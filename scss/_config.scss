@@ -50,3 +50,9 @@ $dark-theme: (
         box-shadow: 0 0 3px hsl(207, 26%, 10%);
     }
 }
+
+@mixin smaller_screen() {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
