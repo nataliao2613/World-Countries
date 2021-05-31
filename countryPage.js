@@ -46,11 +46,14 @@ axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
         .then((response) => {
             let borderCountry = response.data
             let borderBox = document.createElement('button')
-            borderBox.textContent = borderCountry.name
-            borderBox.addEventListener('click', () => {
+            let countryName = document.createElement('a')
+            countryName.textContent = borderCountry.name
+            
+            countryName.addEventListener('click', () => {
                 localStorage.setItem('countryCode', c)
-                location.href = `/country-page.html`
+                countryName.href = `/country-page.html`
             })
+            borderBox.appendChild(countryName)
             borders.appendChild(borderBox)
         })
 

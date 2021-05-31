@@ -395,6 +395,10 @@ header span i {
           box-shadow: 0 0 3px #131a20;
 }
 
+.details__borders button a {
+  text-decoration: none;
+}
+
 .light-theme .details__borders button {
   color: #111517;
 }

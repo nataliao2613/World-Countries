@@ -88,6 +88,10 @@
             border: none;
             background: transparent;
 
+            a {
+                text-decoration: none;
+            }
+
             .light-theme & {
                 color: set-element-style($light-theme, 'text');
             }
