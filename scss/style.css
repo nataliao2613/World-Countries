@@ -399,15 +399,11 @@ header span i {
   text-decoration: none;
 }
 
-.details__borders button a:visited, .details__borders button a:active, .details__borders button a:link {
-  font: 300 14px "Nunito Sans", sans-serif;
-}
-
-.light-theme .details__borders button {
+.light-theme .details__borders button a {
   color: #111517;
 }
 
-.dark-theme .details__borders button {
+.dark-theme .details__borders button a {
   color: white;
 }
 
